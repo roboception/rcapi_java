@@ -1,0 +1,14 @@
+target/
+.classpath
+.settings
+.project
+
+rcapi-java/target/
+rcapi-java/.classpath
+rcapi-java/.settings
+rcapi-java/.project
+
+rcapi-java-examples/target/
+rcapi-java-examples/.classpath
+rcapi-java-examples/.settings
+rcapi-java-examples/.project

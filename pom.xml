@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- General project settings. -->
+	<groupId>com.roboception.rcapi</groupId>
+	<artifactId>rcapi-java</artifactId>
+	<packaging>pom</packaging>
+	<version>0.1.0</version>
+
+	<name>RCAPI Java Client</name>
+	<description>The rcapi-java client provides easy configuration and service access to Roboception's 3D sensor rc_visard.</description>
+
+	<organization>
+		<name>Roboception GmbH</name>
+		<url>http://roboception.com/</url>
+	</organization>
+
+	<scm>
+		<developerConnection>scm:git:https://github.com/roboception/rcapi_java.git</developerConnection>
+		<url>https://github.com/roboception/rcapi_java</url>
+	</scm>
+
+	<!-- Properties that can be overridden using e.g. 'mvn -Drestlet.version=2.3.0'. -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<restlet.version>2.2.1</restlet.version>
+		<target.java.version>1.6</target.java.version>
+		<plugin.javadoc.version>2.10.3</plugin.javadoc.version>
+	</properties>
+
+	<modules>
+		<module>rcapi-java</module>
+		<module>rcapi-java-examples</module>
+	</modules>
+
+  <repositories>
+    <repository>
+      <id>maven-restlet</id>
+      <name>Public online Restlet repository</name>
+      <url>http://maven.restlet.com</url>
+    </repository>
+  </repositories>
+
+
+  <profiles>
+
+    <!-- profile used for in-house development -->
+    <profile>
+      <id>roboception</id>
+
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>http://artifactory.roboception.de/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>http://artifactory.roboception.de/artifactory/libs-snapshot</url>
+        </repository>
+      </repositories>
+
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>plugins-release</name>
+          <url>http://artifactory.roboception.de/artifactory/plugins-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>plugins-snapshot</name>
+          <url>http://artifactory.roboception.de/artifactory/plugins-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+
+		  <distributionManagement>
+		    <repository>
+		      <id>releases</id>
+		      <url>https://artifactory.roboception.de/artifactory/libs-release</url>
+		    </repository>
+		  </distributionManagement>
+
+    </profile>
+
+  </profiles>
+
+
+</project>

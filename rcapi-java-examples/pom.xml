@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- General project settings. -->
+	<parent>
+		<groupId>com.roboception.rcapi</groupId>
+		<artifactId>rcapi-java</artifactId>
+		<version>0.1.0</version>
+	</parent>
+	<artifactId>rcapi-examples</artifactId>
+	<packaging>jar</packaging>
+
+	<name>RCAPI Examples</name>
+	<description>Examples for the rcapi-java client to configure and access services on Roboception's 3D sensor rc_visard.</description>
+
+	<organization>
+		<name>Roboception GmbH</name>
+		<url>http://roboception.com/</url>
+	</organization>
+
+  <scm>
+    <developerConnection>scm:git:https://github.com/roboception/rcapi_java.git</developerConnection>
+    <url>https://github.com/roboception/rcapi_java</url>
+  </scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+    <plugins>
+      <!-- define specific version of maven compiler -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+
+      <!--plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${plugin.javadoc.version}</version>
+        <configuration>
+          <show>protected</show>
+          <excludePackageNames>spread</excludePackageNames>
+          <quiet>true</quiet>
+        </configuration>
+      </plugin-->
+
+    </plugins>
+  </build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.roboception.rcapi</groupId>
+			<artifactId>rcapi</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>
